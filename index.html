@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Relatório Interativo com Áudio: Inclusão Digital na Educação</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #f8fafc; /* slate-50 */
+      color: #1e293b; /* slate-800 */
+    }
+    .chart-container {
+      position: relative;
+      width: 100%;
+      max-width: 450px;
+      margin-left: auto;
+      margin-right: auto;
+      height: auto;
+      min-height: 350px;
+    }
+    @media (min-width: 768px) {
+      .chart-container {
+        max-width: 500px;
+        min-height: 400px;
+      }
+    }
+    .sticky-nav {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      background-color: rgba(248, 250, 252, 0.8);
+    }
+    .section-card {
+      background-color: white;
+      border-radius: 0.75rem;
+      box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+      transition: all 0.3s ease-in-out;
+    }
+    .accordion-content {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.5s ease-in-out;
+    }
+    .narrate-btn {
+      background-color: #f0fdfa; /* teal-50 */
+      border: 1px solid #ccfbf1; /* teal-100 */
+      color: #134e4a; /* teal-900 */
+      cursor: pointer;
+      font-size: 0.75rem;
+      margin-left: 0.75rem;
+      padding: 0.25rem 0.5rem;
+      border-radius: 9999px;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.25rem;
+      vertical-align: middle;
+      transition: all 0.2s ease;
+    }
+    .narrate-btn:hover {
+      background-color: #ccfbf1; /* teal-100 */
+      transform: scale(1.05);
+    }
+    .narrate-btn.playing {
+      background-color: #14b8a6; /* teal-500 */
+      color: white;
+      animation: pulse 1.5s infinite;
+    }
+    @keyframes pulse {
+      0%, 100% { box-shadow: 0 0 0 0 rgba(20, 184, 166, 0.4); }
+      50% { box-shadow: 0 0 0 0.5rem rgba(20, 184, 166, 0); }
+    }
+    .narrating-section {
+      transition: box-shadow 0.5s ease-in-out;
+      box-shadow: 0 0 0 3px #14b8a6; /* teal-500 */
+    }
+  </style>
+</head>
+<body class="antialiased">
+
+<header class="sticky-nav shadow-md">
+  <nav class="container mx-auto px-4 py-3">
+    <ul class="flex justify-center items-center space-x-4 md:space-x-8 text-sm md:text-base font-medium">
+      <li><a href="#problema" class="text-slate-600 hover:text-teal-600 transition-colors">O Problema</a></li>
+      <li><a href="#diagnostico" class="text-slate-600 hover:text-teal-600 transition-colors">O Diagnóstico</a></li>
+      <li><a href="#solucao" class="text-slate-600 hover:text-teal-600 transition-colors">A Solução</a></li>
+      <li><a href="#conclusoes" class="text-slate-600 hover:text-teal-600 transition-colors">Conclusões</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main class="container mx-auto p-4 md:p-8">
+
+  <section id="hero" class="text-center py-12 md:py-20">
+    <h1 class="text-4xl md:text-5xl font-bold text-teal-700 mb-4">Projeto de Extensão: Inclusão Digital na Educação</h1>
+    <div id="narrate-container-01_hero" class="text-lg md:text-xl text-slate-600 max-w-3xl mx-auto rounded-lg">
+      <p>Uma análise sobre os desafios da exclusão digital e o caminho para uma sociedade mais conectada, justa e com igualdade de oportunidades para todos.<button class="narrate-btn" data-audio-src="audio/01_hero.mp3" data-highlight-id="narrate-container-01_hero" style="display: none;">▶︎ Ouvir</button></p>
+    </div>
+    <div class="mt-8">
+      <button id="start-presentation-btn" class="bg-teal-600 hover:bg-teal-700 text-white font-bold py-3 px-8 rounded-full shadow-lg transform hover:scale-105 transition-all duration-300">
+        ▶️ Iniciar Apresentação Guiada
+      </button>
+    </div>
+  </section>
+
+  <section id="problema" class="py-12 md:py-16">
+    <div class="text-center mb-12">
+      <h2 class="text-3xl font-bold mb-2">O Problema: Um Fosso Digital a Transpor
+        <button class="narrate-btn" data-audio-src="audio/02_problema_intro.mp3" data-highlight-id="narrate-container-02_problema_intro">▶︎ Ouvir</button>
+      </h2>
+      <div id="narrate-container-02_problema_intro" class="text-slate-600 max-w-2xl mx-auto rounded-lg">
+        <p>O nosso projeto focou-se na desigualdade no acesso à internet em comunidades de baixa renda, um desafio que limita o acesso à educação, emprego e serviços essenciais.</p>
+      </div>
+    </div>
+
+    <div class="grid md:grid-cols-2 gap-8">
+      <div class="section-card p-6">
+        <h3 class="text-2xl font-bold mb-4 text-teal-700">Causas e Consequências</h3>
+        <div class="accordion-item border-b border-slate-200 py-3">
+          <button class="accordion-header w-full text-left font-semibold text-lg flex justify-between items-center">
+            <span>Causas do Problema</span>
+            <span class="transform transition-transform duration-300">▼</span>
+          </button>
+          <div id="narrate-container-03_causas" class="accordion-content text-slate-600 pt-2 rounded-lg">
+            <ul class="list-disc list-inside space-y-1">
+              <li>Falta de infraestrutura em áreas carentes.</li>
+              <li>Alto custo de planos de dados e equipamentos.</li>
+              <li>Baixo nível de literacia digital.</li>
+              <li>Falta de políticas públicas eficazes e contínuas.</li>
+              <li>Manutenção inadequada de projetos que já existem.</li>
+            </ul>
+            <button class="narrate-btn mt-2" data-audio-src="audio/03_causas.mp3" data-highlight-id="narrate-container-03_causas">▶︎ Ouvir</button>
+          </div>
+        </div>
+        <div class="accordion-item border-b border-slate-200 py-3">
+          <button class="accordion-header w-full text-left font-semibold text-lg flex justify-between items-center">
+            <span>Consequências</span>
+            <span class="transform transition-transform duration-300">▼</span>
+          </button>
+          <div id="narrate-container-04_consequencias" class="accordion-content text-slate-600 pt-2 rounded-lg">
+            <ul class="list-disc list-inside space-y-1">
+              <li>Prejuízo no aprendizado e desempenho escolar.</li>
+              <li>Dificuldade de acesso a oportunidades de emprego.</li>
+              <li>Exclusão do acesso a serviços públicos vitais.</li>
+              <li>Aprofundamento das desigualdades sociais.</li>
+              <li>Limitação da participação cidadã e isolamento.</li>
+            </ul>
+            <button class="narrate-btn mt-2" data-audio-src="audio/04_consequencias.mp3" data-highlight-id="narrate-container-04_consequencias">▶︎ Ouvir</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="section-card p-6">
+        <h3 class="text-2xl font-bold mb-4 text-teal-700">Lições Aprendidas
+          <button class="narrate-btn" data-audio-src="audio/05_licoes_intro.mp3" data-highlight-id="narrate-container-05_licoes_intro">▶︎ Ouvir</button>
+        </h3>
+        <div id="narrate-container-05_licoes_intro" class="text-slate-600 mb-4 rounded-lg">
+          <p>Analisámos iniciativas existentes, como o Acessa São Paulo e o Coletivo Digital, para aprender com as suas experiências.</p>
+        </div>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <div>
+            <h4 class="font-semibold text-green-700 mb-2">✔ Boas Práticas a Integrar</h4>
+            <ul class="list-disc list-inside text-sm text-slate-600 space-y-1">
+              <li>Acesso gratuito</li>
+              <li>Oficinas de capacitação</li>
+              <li>Parcerias locais</li>
+              <li>Reaproveitamento de equipamentos</li>
+              <li>Protagonismo comunitário</li>
+            </ul>
+          </div>
+          <div>
+            <h4 class="font-semibold text-red-700 mb-2">✖ Más Práticas a Evitar</h4>
+            <ul class="list-disc list-inside text-sm text-slate-600 space-y-1">
+              <li>Falta de continuidade</li>
+              <li>Exclusão da comunidade</li>
+              <li>Capacitações genéricas</li>
+              <li>Desconexão com políticas</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="diagnostico" class="py-12 md:py-16 bg-white rounded-lg shadow-inner">
+    <div class="text-center mb-12">
+      <h2 class="text-3xl font-bold mb-2">O Diagnóstico: A Realidade em Dados
+        <button class="narrate-btn" data-audio-src="audio/06_diagnostico_intro.mp3" data-highlight-id="narrate-container-06_diagnostico_intro">▶︎ Ouvir</button>
+      </h2>
+      <div id="narrate-container-06_diagnostico_intro" class="text-slate-600 max-w-2xl mx-auto rounded-lg">
+        <p>Através de entrevistas online, quantificámos o desafio. Os gráficos abaixo ilustram as nossas principais descobertas. Passe o rato sobre os gráficos para mais detalhes.</p>
+      </div>
+    </div>
+    <div class="grid lg:grid-cols-2 gap-8 items-center">
+      <div class="text-center md:text-left">
+        <h3 class="text-2xl font-bold mb-4 text-teal-700">70% Enfrentam Dificuldades
+          <button class="narrate-btn" data-audio-src="audio/07_diagnostico_p1.mp3" data-highlight-id="narrate-container-07_diagnostico_p1">▶︎ Ouvir</button>
+        </h3>
+        <div id="narrate-container-07_diagnostico_p1" class="rounded-lg">
+          <p class="text-slate-600 mb-4">A nossa pesquisa revelou um dado alarmante: 7 em cada 10 pessoas entrevistadas enfrentam algum tipo de carência no que toca à inclusão digital. Este número evidencia a urgência e a relevância do problema na comunidade estudada.</p>
+          <p class="text-slate-600">Este fosso digital não se limita apenas ao acesso, mas também à qualidade da conexão e à falta de equipamentos, como detalhado no gráfico ao lado.</p>
+        </div>
+      </div>
+      <div class="chart-container">
+        <canvas id="digitalInclusionChart"></canvas>
+      </div>
+    </div>
+    <div class="grid lg:grid-cols-2 gap-8 items-center mt-16">
+      <div class="chart-container order-2 lg:order-1">
+        <canvas id="barriersChart"></canvas>
+      </div>
+      <div class="text-center md:text-left order-1 lg:order-2">
+        <h3 class="text-2xl font-bold mb-4 text-teal-700">As Principais Barreiras
+          <button class="narrate-btn" data-audio-src="audio/08_diagnostico_p2.mp3" data-highlight-id="narrate-container-08_diagnostico_p2">▶︎ Ouvir</button>
+        </h3>
+        <div id="narrate-container-08_diagnostico_p2" class="text-slate-600 mb-4 rounded-lg">
+          <p>Ao aprofundar a análise, identificámos os três principais obstáculos à plena inclusão digital. O acesso limitado à internet surge como o maior desafio, seguido de perto pela falta de equipamentos adequados e pela desigualdade no uso efetivo da tecnologia, o que demonstra a necessidade de capacitação.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="solucao" class="py-12 md:py-16">
+    <div class="text-center mb-12">
+      <h2 class="text-3xl font-bold mb-2">A Solução Proposta: Uma Abordagem Integrada
+        <button class="narrate-btn" data-audio-src="audio/09_solucao_intro.mp3" data-highlight-id="narrate-container-09_solucao_intro">▶︎ Ouvir</button>
+      </h2>
+      <div id="narrate-container-09_solucao_intro" class="text-slate-600 max-w-2xl mx-auto rounded-lg">
+        <p>A superação da exclusão digital exige mais do que uma única ação. A nossa pesquisa concluiu que uma solução eficaz deve assentar em três pilares interdependentes. Clique em cada pilar para explorar as ações sugeridas.</p>
+      </div>
+    </div>
+    <div class="grid sm:grid-cols-1 md:grid-cols-3 gap-6">
+      <div class="solution-card section-card p-6 text-center cursor-pointer" data-solution="infra">
+        <div class="text-4xl mb-4">🌐</div>
+        <h3 class="text-xl font-bold mb-2">Infraestrutura e Equipamentos</h3>
+        <p class="text-slate-500 text-sm">Garantir as ferramentas básicas para a conexão.</p>
+      </div>
+      <div class="solution-card section-card p-6 text-center cursor-pointer" data-solution="capacitacao">
+        <div class="text-4xl mb-4">🎓</div>
+        <h3 class="text-xl font-bold mb-2">Capacitação e Educação</h3>
+        <p class="text-slate-500 text-sm">Desenvolver competências para um uso autónomo e crítico.</p>
+      </div>
+      <div class="solution-card section-card p-6 text-center cursor-pointer" data-solution="parcerias">
+        <div class="text-4xl mb-4">🤝</div>
+        <h3 class="text-xl font-bold mb-2">Parcerias e Suporte</h3>
+        <p class="text-slate-500 text-sm">Criar uma rede de apoio para garantir a sustentabilidade.</p>
+      </div>
+    </div>
+    <div id="solution-details" class="mt-8 p-6 bg-white rounded-lg shadow-inner min-h-[150px] flex items-center justify-center">
+      <p class="text-slate-500">Selecione um pilar acima para ver as ações detalhadas.</p>
+    </div>
+  </section>
+
+  <section id="conclusoes" class="py-12 md:py-16">
+    <div class="text-center mb-12">
+      <h2 class="text-3xl font-bold mb-2">Conclusões e Reflexões Finais
+        <button class="narrate-btn" data-audio-src="audio/13_conclusoes_intro.mp3" data-highlight-id="narrate-container-13_conclusoes_intro">▶︎ Ouvir</button>
+      </h2>
+      <div id="narrate-container-13_conclusoes_intro" class="text-slate-600 max-w-2xl mx-auto rounded-lg">
+        <p>Este projeto não só validou a existência do problema, mas produziu um roteiro claro para iniciar a sua resolução.</p>
+      </div>
+    </div>
+    <div class="space-y-6">
+      <blockquote class="section-card p-6 border-l-4 border-teal-600">
+        <div id="narrate-container-14_conclusao_1" class="text-lg text-slate-700 italic rounded-lg">
+          <p>"A intervenção respondeu ao problema inicial ao converter um tema amplo num diagnóstico local preciso. Este diagnóstico fundamenta um plano de ação concreto, garantindo que qualquer futura intervenção seja relevante e verdadeiramente eficaz."
+            <button class="narrate-btn" data-audio-src="audio/14_conclusao_1.mp3" data-highlight-id="narrate-container-14_conclusao_1">▶︎ Ouvir</button>
+          </p>
+        </div>
+      </blockquote>
+      <blockquote class="section-card p-6 border-l-4 border-teal-600">
+        <div id="narrate-container-15_conclusao_2" class="text-lg text-slate-700 italic rounded-lg">
+          <p>"O que as pessoas devem se lembrar sobre ações extensionistas é que o diálogo é fundamental, o objetivo é a transformação social e o impacto real é o que valida o conhecimento. Começar pequeno, pensando grande, pode ser o catalisador para mudanças sistémicas."
+            <button class="narrate-btn" data-audio-src="audio/15_conclusao_2.mp3" data-highlight-id="narrate-container-15_conclusao_2">▶︎ Ouvir</button>
+          </p>
+        </div>
+      </blockquote>
+    </div>
+  </section>
+</main>
+
+<footer class="bg-slate-800 text-slate-300 py-6 text-center">
+  <p>Projeto de Extensão - Universidade Cruzeiro do Sul (UCS).</p>
+  <p class="text-sm mt-1">Desenvolvido por: Arthur Dantas,  Brigity Vracovsky, Eduardo Augusto, Giovanna Carvalho, Juan Vieira, Kauan Santos, Maria Gabrielle, Washington Correia e Ismael Giuseppe</p>
+</footer>
+
+<audio id="audio-player"></audio>
+
+<div id="audio-controls" class="fixed bottom-5 right-5 bg-white p-2 rounded-full shadow-lg flex items-center space-x-2 border border-slate-200" style="display: none;">
+  <button id="play-pause-btn" class="w-10 h-10 flex items-center justify-center text-xl rounded-full text-teal-600 hover:bg-teal-50">▶️</button>
+  <button id="stop-btn" class="w-10 h-10 flex items-center justify-center text-xl rounded-full text-red-600 hover:bg-red-50">⏹️</button>
+</div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const audioPlayer = document.getElementById('audio-player');
+    const audioControls = document.getElementById('audio-controls');
+    const playPauseBtn = document.getElementById('play-pause-btn');
+    const stopBtn = document.getElementById('stop-btn');
+
+    let audioState = {
+      currentBtn: null,
+      currentHighlight: null,
+      playlist: [],
+      playlistIndex: -1,
+    };
+
+    function resetAudioState() {
+      if (audioState.currentBtn) {
+        audioState.currentBtn.classList.remove('playing');
+        audioState.currentBtn.innerHTML = '▶︎ Ouvir';
+      }
+      if (audioState.currentHighlight) {
+        audioState.currentHighlight.classList.remove('narrating-section');
+      }
+      audioState.currentBtn = null;
+      audioState.currentHighlight = null;
+      // Não resetar a playlist aqui para o modo guiado funcionar
+      // audioState.playlistIndex = -1;
+    }
+
+    function stopAudio() {
+      audioPlayer.pause();
+      audioPlayer.removeAttribute('src');
+      audioControls.style.display = 'none';
+      resetAudioState();
+      // Agora sim, resetamos o index da playlist
+      audioState.playlistIndex = -1;
+    }
+
+    function playAudio(btn) {
+      const audioSrc = btn.dataset.audioSrc;
+      const highlightId = btn.dataset.highlightId;
+
+      // Limpa o estado anterior, exceto se for o mesmo botão (pausado)
+      if(audioState.currentBtn !== btn) {
+        resetAudioState();
+      }
+
+      if (audioSrc) {
+        audioState.currentBtn = btn;
+        if(highlightId) {
+          audioState.currentHighlight = document.getElementById(highlightId);
+          if(audioState.currentHighlight) {
+            audioState.currentHighlight.classList.add('narrating-section');
+          }
+        }
+
+        audioPlayer.src = audioSrc;
+        audioPlayer.play().catch(e => console.error("Erro ao tocar áudio:", e));
+
+        btn.classList.add('playing');
+        btn.innerHTML = '❚❚ Pausar';
+        audioControls.style.display = 'flex';
+      }
+    }
+
+    function handlePlayPause() {
+      if (!audioPlayer.src) return;
+
+      if (audioPlayer.paused) {
+        audioPlayer.play();
+      } else {
+        audioPlayer.pause();
+      }
+    }
+
+    function setupEventListeners() {
+      document.querySelectorAll('.narrate-btn').forEach(btn => {
+        btn.addEventListener('click', (e) => {
+          e.stopPropagation();
+          // Se for um clique em um botão individual, saímos do modo playlist
+          audioState.playlistIndex = -1;
+
+          if (audioState.currentBtn === btn) {
+            handlePlayPause();
+          } else {
+            playAudio(btn);
+          }
+        });
+      });
+
+      playPauseBtn.addEventListener('click', handlePlayPause);
+      stopBtn.addEventListener('click', stopAudio);
+
+      audioPlayer.addEventListener('play', () => {
+        if (audioState.currentBtn) {
+          audioState.currentBtn.classList.add('playing');
+          audioState.currentBtn.innerHTML = '❚❚ Pausar';
+        }
+        playPauseBtn.textContent = '⏸️';
+      });
+
+      audioPlayer.addEventListener('pause', () => {
+        if (audioState.currentBtn && audioPlayer.currentTime > 0 && !audioPlayer.ended) {
+          audioState.currentBtn.innerHTML = '▶︎ Continuar';
+          audioState.currentBtn.classList.remove('playing');
+        }
+        playPauseBtn.textContent = '▶️';
+      });
+
+      audioPlayer.addEventListener('ended', () => {
+        // Lógica de avanço da playlist
+        if (audioState.playlistIndex !== -1 && audioState.playlistIndex < audioState.playlist.length - 1) {
+          audioState.playlistIndex++;
+          playPlaylistTrack(audioState.playlistIndex);
+        } else {
+          // Se a playlist acabou, para tudo
+          stopAudio();
+        }
+      });
+
+      document.getElementById('start-presentation-btn').addEventListener('click', startPresentation);
+    }
+
+    // ✅ CORREÇÃO JAVASCRIPT: Adicionada a primeira faixa de áudio à playlist
+    const presentationPlaylistData = [
+      { highlightId: 'narrate-container-01_hero', audioSrc: 'audio/01_hero.mp3'},
+      { highlightId: 'narrate-container-02_problema_intro', audioSrc: 'audio/02_problema_intro.mp3'},
+      { highlightId: 'narrate-container-03_causas', audioSrc: 'audio/03_causas.mp3'},
+      { highlightId: 'narrate-container-04_consequencias', audioSrc: 'audio/04_consequencias.mp3'},
+      { highlightId: 'narrate-container-05_licoes_intro', audioSrc: 'audio/05_licoes_intro.mp3'},
+      { highlightId: 'narrate-container-06_diagnostico_intro', audioSrc: 'audio/06_diagnostico_intro.mp3'},
+      { highlightId: 'narrate-container-07_diagnostico_p1', audioSrc: 'audio/07_diagnostico_p1.mp3'},
+      { highlightId: 'narrate-container-08_diagnostico_p2', audioSrc: 'audio/08_diagnostico_p2.mp3'},
+      { highlightId: 'narrate-container-09_solucao_intro', audioSrc: 'audio/09_solucao_intro.mp3'},
+      // Para uma experiência completa, a apresentação guiada também poderia narrar os pilares da solução
+      { highlightId: 'narrate-container-13_conclusoes_intro', audioSrc: 'audio/13_conclusoes_intro.mp3'},
+      { highlightId: 'narrate-container-14_conclusao_1', audioSrc: 'audio/14_conclusao_1.mp3'},
+      { highlightId: 'narrate-container-15_conclusao_2', audioSrc: 'audio/15_conclusao_2.mp3'},
+    ];
+
+    function playPlaylistTrack(index) {
+      const track = audioState.playlist[index];
+      const sectionElement = document.getElementById(track.highlightId);
+      // A lógica agora depende de encontrar o botão, por isso a correção no HTML foi crucial
+      const correspondingButton = document.querySelector(`button[data-audio-src="${track.audioSrc}"]`);
+
+      if (sectionElement && correspondingButton) {
+        sectionElement.scrollIntoView({ behavior: 'smooth', block: 'center' });
+
+        // Espera a rolagem terminar antes de tocar
+        setTimeout(() => {
+          playAudio(correspondingButton);
+          audioState.playlistIndex = index; // Confirma o índice atual
+        }, 700);
+      } else {
+        console.error(`Não foi possível encontrar o elemento ou o botão para a faixa:`, track);
+        // Se uma faixa falhar, tenta pular para a próxima
+        if (audioState.playlistIndex < audioState.playlist.length - 1) {
+          audioState.playlistIndex++;
+          playPlaylistTrack(audioState.playlistIndex);
+        } else {
+          stopAudio();
+        }
+      }
+    }
+
+    function startPresentation() {
+      stopAudio(); // Garante que tudo pare antes de começar
+      audioState.playlist = presentationPlaylistData;
+      audioState.playlistIndex = 0;
+      playPlaylistTrack(0);
+    }
+
+    document.querySelectorAll('.accordion-header').forEach(header => {
+      header.addEventListener('click', () => {
+        const content = header.nextElementSibling;
+        const icon = header.querySelector('span:last-child');
+
+        // Abre ou fecha o accordion
+        if (content.style.maxHeight) {
+          content.style.maxHeight = null;
+          icon.style.transform = 'rotate(0deg)';
+        } else {
+          // Fecha outros accordions no mesmo card
+          const parentCard = header.closest('.section-card');
+          parentCard.querySelectorAll('.accordion-content').forEach(otherContent => {
+            otherContent.style.maxHeight = null;
+          });
+          parentCard.querySelectorAll('.accordion-header span:last-child').forEach(otherIcon => {
+            otherIcon.style.transform = 'rotate(0deg)';
+          });
+
+          content.style.maxHeight = content.scrollHeight + "px";
+          icon.style.transform = 'rotate(180deg)';
+        }
+      });
+    });
+
+    const solutionCards = document.querySelectorAll('.solution-card');
+    const detailsContainer = document.getElementById('solution-details');
+    const solutionData = {
+      infra: { title: 'Infraestrutura e Equipamentos', points: ['Instalação de pontos de Wi-Fi público.', 'Criação de programas de doação/empréstimo de equipamentos.', 'Parcerias para subsidiar planos de internet.'], audio: 'audio/10_solucao_infra.mp3' },
+      capacitacao: { title: 'Capacitação e Educação', points: ['Realização de oficinas de capacitação digital.', 'Criação de tutoriais sobre ferramentas digitais.', 'Formação de agentes multiplicadores na comunidade.'], audio: 'audio/11_solucao_capacitacao.mp3' },
+      parcerias: { title: 'Parcerias e Suporte Contínuo', points: ['Articulação com o poder público.', 'Criação de uma rede de voluntários para suporte técnico.', 'Parcerias com universidades e ONGs para sustentabilidade.'], audio: 'audio/12_solucao_parcerias.mp3' }
+    };
+
+    function updateSolutionDetails(key) {
+      const data = solutionData[key];
+      const highlightId = `narrate-container-${key}`;
+      detailsContainer.innerHTML = `<div id="${highlightId}" class="text-left w-full rounded-lg animate-fade-in"><h4 class="text-xl font-bold text-teal-700 mb-3">${data.title}<button class="narrate-btn" data-audio-src="${data.audio}" data-highlight-id="${highlightId}">▶︎ Ouvir</button></h4><ul class="list-disc list-inside space-y-2 text-slate-600">${data.points.map(p => `<li>${p}</li>`).join('')}</ul></div>`;
+
+      // Precisamos re-adicionar os event listeners para os botões recém-criados
+      setupEventListeners();
+
+      // Auto-play do áudio correspondente ao pilar clicado
+      const newButton = detailsContainer.querySelector('.narrate-btn');
+      if (newButton) {
+        playAudio(newButton);
+      }
+    }
+
+    solutionCards.forEach(card => {
+      card.addEventListener('click', () => {
+        const key = card.dataset.solution;
+        // Adiciona um destaque visual ao card clicado
+        solutionCards.forEach(c => c.classList.remove('narrating-section'));
+        card.classList.add('narrating-section');
+        // Atualiza os detalhes
+        updateSolutionDetails(key);
+      });
+    });
+
+    setupEventListeners();
+
+    // Chart.js Implementations
+    const digitalInclusionCtx = document.getElementById('digitalInclusionChart').getContext('2d');
+    new Chart(digitalInclusionCtx, {
+      type: 'doughnut',
+      data: {
+        labels: ['Enfrentam algum tipo de carência', 'Com boa inclusão digital'],
+        datasets: [{ label: '% da Comunidade', data: [70, 30], backgroundColor: ['#b91c1c', '#047857'], borderColor: '#f8fafc', borderWidth: 4, hoverOffset: 8 }]
+      },
+      options: { responsive: true, maintainAspectRatio: false, plugins: { legend: { position: 'bottom', labels: { padding: 20, font: { size: 14 }}}, tooltip: { callbacks: { label: function(context) { return `${context.label}: ${context.raw}%`; }}} }, cutout: '60%' }
+    });
+    const barriersCtx = document.getElementById('barriersChart').getContext('2d');
+    new Chart(barriersCtx, {
+      type: 'bar',
+      data: {
+        labels: ['Acesso limitado à internet', 'Falta de equipamentos adequados', 'Desigualdade no uso da tecnologia'],
+        datasets: [{ label: 'Nível de Dificuldade Apontado', data: [9, 7, 5], backgroundColor: 'rgba(239, 68, 68, 0.7)', borderColor: 'rgba(239, 68, 68, 1)', borderWidth: 1 }]
+      },
+      options: { indexAxis: 'y', responsive: true, maintainAspectRatio: false, plugins: { legend: { display: false }}, scales: { x: { beginAtZero: true, grid: { display: false }}, y: { ticks: { font: { size: 14 }}}} }
+    });
+  });
+</script>
+</body>
+</html>
