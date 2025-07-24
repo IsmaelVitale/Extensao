@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Relatório Jurídico: Jair Bolsonaro</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f9fa;
+            color: #212529;
+        }
+       .container {
+            max-width: 900px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        /* --- ESTILO DO BOTÃO DE ÁUDIO --- */
+       .audio-player {
+            text-align: center;
+            margin-bottom: 25px;
+            padding: 20px;
+            background-color: #e9ecef;
+            border-radius: 8px;
+        }
+       .audio-button {
+            background-color: #0056b3;
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            font-size: 1.2em;
+            font-weight: bold;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            box-shadow: 0 4px 12px rgba(0, 86, 179, 0.3);
+        }
+       .audio-button:hover {
+            background-color: #003d82;
+            transform: translateY(-2px);
+        }
+       .audio-button:active {
+            transform: translateY(0);
+        }
+        /* --- FIM DO ESTILO DO BOTÃO --- */
+        header {
+            border-bottom: 2px solid #dee2e6;
+            padding-bottom: 20px;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+        header h1 {
+            font-size: 2.5em;
+            margin: 0;
+            color: #343a40;
+        }
+        nav {
+            background-color: #e9ecef;
+            padding: 10px;
+            border-radius: 5px;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+        nav a {
+            color: #0056b3;
+            text-decoration: none;
+            font-weight: 500;
+            margin: 0 15px;
+            transition: color 0.3s ease;
+        }
+        nav a:hover {
+            color: #003d82;
+        }
+        h2 {
+            font-size: 2em;
+            color: #495057;
+            border-bottom: 1px solid #ced4da;
+            padding-bottom: 10px;
+            margin-top: 40px;
+        }
+        h3 {
+            font-size: 1.5em;
+            color: #495057;
+            margin-top: 30px;
+        }
+        h4 {
+            font-size: 1.2em;
+            color: #6c757d;
+        }
+        p, li {
+            font-size: 1.1em;
+            text-align: justify;
+        }
+        ul {
+            padding-left: 20px;
+        }
+       .citation {
+            font-size: 0.8em;
+            vertical-align: super;
+            color: #0056b3;
+            text-decoration: none;
+            font-weight: bold;
+        }
+       .citation:hover {
+            text-decoration: underline;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+            font-size: 0.95em;
+        }
+        th, td {
+            border: 1px solid #dee2e6;
+            padding: 12px;
+            text-align: left;
+        }
+        th {
+            background-color: #f1f3f5;
+            font-weight: 600;
+        }
+        tbody tr:nth-child(odd) {
+            background-color: #f8f9fa;
+        }
+        footer {
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 2px solid #dee2e6;
+        }
+        footer h2 {
+            border-bottom: none;
+        }
+       .sources-list {
+            list-style-type: none;
+            padding: 0;
+        }
+       .sources-list li {
+            margin-bottom: 10px;
+            font-size: 0.9em;
+            word-break: break-all;
+        }
+       .sources-list a {
+            color: #0056b3;
+            text-decoration: none;
+        }
+       .sources-list a:hover {
+            text-decoration: underline;
+        }
+    </style>
+    <script>
+        // Função para tocar ou pausar o áudio
+        function toggleAudio() {
+            var audio = document.getElementById("audioResumo");
+            var button = document.getElementById("audioButton");
+            if (audio.paused) {
+                audio.play();
+                button.textContent = "Pausar Resumo";
+            } else {
+                audio.pause();
+                button.textContent = "Ouvir o Resumo em Áudio";
+            }
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+
+        <div class="audio-player">
+            <audio id="audioResumo" src="audio/resumo.mp3"></audio>
+            <button id="audioButton" onclick="toggleAudio()" class="audio-button">
+                ▶ Ouvir o Resumo em Áudio
+            </button>
+        </div>
+        <header>
+            <h1>O Labirinto Jurídico: Um Relatório Abrangente sobre as Investigações e Ações Judiciais contra Jair Bolsonaro</h1>
+        </header>
+
+        <nav>
+            <a href="#part1">Visão Geral</a> |
+            <a href="#part2">Frente Criminal (STF)</a> |
+            <a href="#part3">Frente Eleitoral (TSE)</a> |
+            <a href="#part4">Análise e Cronologia</a> |
+            <a href="#appendix">Tabela Resumo</a> |
+            <a href="#sources">Fontes</a>
+        </nav>
+
+        <main>
+            <section id="part1">
+                <h2>Parte I: Sumário Executivo e Visão Geral</h2>
+                <h3>Introdução</h3>
+                <p>O cenário jurídico-político brasileiro contemporâneo é marcado por um fenômeno sem precedentes: a multiplicidade de investigações e processos que têm como alvo o ex-presidente Jair Bolsonaro. Nenhum outro ex-chefe de Estado na história da República enfrentou, simultaneamente, um espectro tão amplo de acusações, que tramitam nas mais altas esferas do Poder Judiciário e abrangem desde crimes eleitorais até delitos comuns com potencial de reclusão. As duas principais arenas deste embate são o Supremo Tribunal Federal (STF), responsável por julgar processos criminais contra autoridades com foro por prerrogativa de função, e o Tribunal Superior Eleitoral (TSE), o guardião das normas da competição política. Este relatório tem como objetivo fornecer um guia analítico, detalhado e rigorosamente fundamentado sobre esse complexo panorama, dissecando as principais acusações, as provas tornadas públicas, o andamento processual e as estratégias de defesa, a fim de oferecer clareza sobre um dos capítulos mais intrincados da história recente do Brasil.</p>
+                <h3>Temas Transversais</h3>
+                <p>Uma análise aprofundada das diversas frentes investigativas revela que não se trata de uma coleção aleatória de acusações isoladas. Pelo contrário, emerge uma constelação de casos interligados por padrões recorrentes, atores-chave e objetivos subjacentes. A dimensão do desafio legal é, por si só, notável. Em determinado momento, o ex-presidente era alvo de ao menos 10 inquéritos apenas no STF <a href="#source-1" class="citation">[1, 2]</a> e um total de no mínimo 25 investigações em diferentes esferas judiciais.<a href="#source-3" class="citation">[3]</a> Aliados e observadores jurídicos apontam que o volume de processos, que segundo levantamentos do próprio partido do ex-presidente poderia chegar a quase 600 ações de naturezas diversas, é extraordinariamente alto, mesmo para os padrões de ex-mandatários.<a href="#source-4" class="citation">[4]</a></p>
+                <p>Essa teia de processos é conectada por fios condutores. A figura do tenente-coronel Mauro Cid, ex-ajudante de ordens da Presidência, por exemplo, é um nexo central, aparecendo como peça-chave no caso da fraude nos cartões de vacina <a href="#source-5" class="citation">[5]</a>, no escândalo da venda ilegal de joias sauditas <a href="#source-6" class="citation">[6]</a> e na investigação sobre a trama golpista, cujo vídeo de uma reunião ministerial crucial foi encontrado em seu computador.<a href="#source-7" class="citation">[7]</a> Adicionalmente, o inquérito das "milícias digitais" <a href="#source-8" class="citation">[8]</a> é frequentemente descrito como um precursor ou uma investigação correlata à da tentativa de golpe, compartilhando o tema do uso de aparatos clandestinos online para atacar as instituições democráticas. A interconexão é tão explícita que provas colhidas em um inquérito, como o das milícias digitais, foram formalmente solicitadas para instruir outros processos, incluindo ações no TSE.<a href="#source-9" class="citation">[9]</a> Essa dinâmica transforma o desafio legal de Bolsonaro de uma série de batalhas individuais em uma única e complexa frente de guerra jurídica, onde um avanço em uma investigação pode gerar um efeito dominó, fornecendo munição probatória para todas as outras e amplificando exponencialmente o risco legal para o ex-presidente.</p>
+            </section>
+
+            <section id="part2">
+                <h2>Parte II: A Frente Criminal – Investigações e Ações no Supremo Tribunal Federal (STF)</h2>
+                <p>Esta seção se debruça sobre as alegações de maior gravidade, que tramitam no STF e carregam o potencial de condenação à prisão, representando o flanco mais perigoso para o ex-presidente.</p>
+                
+                <h3 id="stf-golpe">Seção 2.1: A Investigação sobre a Tentativa de Golpe de Estado (Ação Penal 2668)</h3>
+                <p>Este é, sem dúvida, o processo de maior peso e repercussão. Nele, Jair Bolsonaro deixou a condição de investigado para se tornar réu, enfrentando acusações que atentam contra o próprio cerne do Estado Democrático de Direito.</p>
+                <h4>As Acusações</h4>
+                <p>Após uma extensa investigação conduzida pela Polícia Federal (PF), a Procuradoria-Geral da República (PGR) formalizou uma denúncia contra Bolsonaro e dezenas de aliados. O ex-presidente foi acusado de cinco crimes principais, cujas penas somadas podem ultrapassar 43 anos de prisão.<a href="#source-10" class="citation">[10, 11, 12]</a> As imputações são:</p>
+                <ul>
+                    <li><strong>Organização Criminosa:</strong> Pena de 3 a 8 anos, com possibilidade de aumento devido a agravantes.<a href="#source-11" class="citation">[11]</a></li>
+                    <li><strong>Abolição Violenta do Estado Democrático de Direito:</strong> Pena de 4 a 8 anos.<a href="#source-11" class="citation">[11]</a></li>
+                    <li><strong>Golpe de Estado:</strong> Pena de 4 a 12 anos.<a href="#source-11" class="citation">[11]</a></li>
+                    <li><strong>Dano Qualificado:</strong> Pela violência e grave ameaça contra o patrimônio da União.<a href="#source-10" class="citation">[10]</a></li>
+                    <li><strong>Deterioração de Patrimônio Tombado:</strong>.<a href="#source-10" class="citation">[10]</a></li>
+                </ul>
+                <p>A peça acusatória da PGR sustenta que Bolsonaro não foi um mero participante, mas o líder, articulador e principal beneficiário de uma organização criminosa estruturalmente ordenada, que se valeu de agentes e recursos públicos para planejar e tentar executar um golpe que o manteria no poder após a derrota eleitoral de 2022.<a href="#source-11" class="citation">[11, 13, 14, 15, 16]</a></p>
+                
+                <h4>A Estrutura Probatória: Uma Tríade de Evidências</h4>
+                <p>A robustez da acusação, elogiada por ministros do STF como "farta" e "consistente" <a href="#source-17" class="citation">[17]</a>, apoia-se em um tripé de provas públicas que, juntas, constroem uma narrativa de escalada golpista.</p>
+                <h5>Pilar 1: A Reunião Ministerial de 5 de Julho de 2022</h5>
+                <p>Considerada pela acusação como a pedra fundamental do caso, a gravação em vídeo desta reunião, encontrada em um computador de Mauro Cid e tornada pública por ordem do STF, é vista como a prova do dolo, ou seja, da intenção de agir. No encontro, Bolsonaro pressiona seus ministros a adotarem uma "conduta ativa na promoção da ilegal desinformação e ataques à Justiça Eleitoral" antes do pleito.<a href="#source-18" class="citation">[18]</a> Ele afirma que a "guerra" não seria vencida com "papel e caneta" e que algo precisava ser feito para impedir uma suposta fraude que levaria à vitória de seu adversário.<a href="#source-18" class="citation">[18, 19, 20]</a> Outras autoridades presentes, como o então ministro do Gabinete de Segurança Institucional (GSI), General Augusto Heleno, também fazem declarações que, segundo os investigadores, corroboram a conspiração.<a href="#source-7" class="citation">[7]</a></p>
+                <h5>Pilar 2: A "Minuta do Golpe"</h5>
+                <p>Se o vídeo da reunião estabelece a intenção, a "minuta do golpe" representa a materialização do plano. Trata-se de um rascunho de decreto encontrado pela PF na residência do então ex-ministro da Justiça, Anderson Torres. O documento detalhava os passos para a instauração de um "estado de defesa" no âmbito do TSE, uma medida de exceção que visava, na prática, anular o resultado das eleições.<a href="#source-21" class="citation">[21]</a> Em sua defesa, Torres alegou que o documento era apócrifo, uma "minuta do Google" sem valor, e que jamais o discutiu com Bolsonaro.<a href="#source-21" class="citation">[21, 22, 23]</a> Para os investigadores, no entanto, a existência do texto é um indício concreto da operacionalização da trama.</p>
+                <h5>Pilar 3: Evidências Digitais e Depoimentos</h5>
+                <p>O terceiro pilar é composto por um vasto material digital extraído de celulares e computadores de assessores próximos, notadamente Mauro Cid, e por depoimentos que corroboram a narrativa da acusação. O relatório final da PF, um documento de 884 páginas, consolida essas provas.<a href="#source-14" class="citation">[14]</a> Um dos testemunhos mais contundentes é o do General Freire Gomes, então comandante do Exército, que afirmou em depoimento ter sido diretamente pressionado por Bolsonaro e seus aliados para aderir ao plano de ruptura institucional, inclusive por meio de uma carta redigida para esse fim.<a href="#source-13" class="citation">[13]</a></p>
+                
+                <h4>Estratégia de Defesa</h4>
+                <p>A defesa de Jair Bolsonaro articula-se em duas frentes: a jurídica e a política. No campo jurídico, a principal tese é a do "crime impossível", um dispositivo do Código Penal que se aplica quando o meio utilizado para cometer um delito é absolutamente ineficaz.<a href="#source-24" class="citation">[24]</a> A defesa argumenta que os atos preparatórios, como a minuta, não tinham a capacidade real de produzir um golpe e, portanto, não seriam puníveis. Alega-se também que um golpe de Estado exigiria atos formais, como a convocação dos Conselhos da República e da Defesa Nacional, o que não ocorreu.<a href="#source-25" class="citation">[25]</a> No âmbito processual, os advogados têm reclamado de cerceamento de defesa por suposta falta de acesso integral às provas <a href="#source-26" class="citation">[26]</a> e criticado vazamentos seletivos de informações para a imprensa.<a href="#source-27" class="citation">[27]</a></p>
+                <p>Essa linha de defesa, ao focar na ineficácia dos atos, representa uma concessão tática importante. Ela evita a negação frontal dos fatos — a existência da reunião e da minuta — e desloca o debate para o campo da interpretação legal. A questão deixa de ser "se os fatos ocorreram" para se tornar "se os fatos que ocorreram configuram tecnicamente o crime de tentativa de golpe". Essa abordagem cede o terreno factual para travar uma batalha sobre a tipicidade da conduta, uma estratégia que reconhece a força do conjunto probatório reunido pela acusação.</p>
+                
+                <h4>Status Atual</h4>
+                <p>Em março de 2025, a Primeira Turma do STF acolheu por unanimidade a denúncia da PGR, tornando Jair Bolsonaro e outros sete integrantes do chamado "núcleo crucial" réus na ação penal.<a href="#source-28" class="citation">[28]</a> O processo encontra-se na fase final de instrução. A PGR já apresentou suas alegações finais, pedindo a condenação dos réus.<a href="#source-15" class="citation">[15]</a> A expectativa na Corte é que o julgamento ocorra em meados de setembro de 2025.<a href="#source-1" class="citation">[1, 15]</a> Em uma medida drástica, o STF impôs a Bolsonaro medidas cautelares, incluindo o uso de tornozeleira eletrônica, recolhimento noturno e a proibição de contato com outros investigados. A decisão foi justificada pela "concreta possibilidade" de fuga do país e por tentativas de obstruir a justiça, especialmente após a abertura do inquérito sobre a suposta tentativa de usar o governo Trump para coagir autoridades brasileiras.<a href="#source-29" class="citation">[29, 30, 31, 32, 33]</a></p>
+
+                <h3 id="stf-joias">Seção 2.2: O Caso das Joias Sauditas – Peculato, Lavagem de Dinheiro e Associação Criminosa</h3>
+                <p>Paralelamente à trama golpista, outra investigação de grande repercussão coloca Bolsonaro na mira da justiça por crimes de corrupção.</p>
+                <h4>As Acusações</h4>
+                <p>A investigação apura o desvio e a venda ilegal de presentes de alto valor recebidos pelo Estado brasileiro durante o seu mandato. Em julho de 2024, a Polícia Federal indiciou formalmente o ex-presidente pelos crimes de peculato (apropriação de bem público por funcionário), associação criminosa e lavagem de dinheiro.<a href="#source-34" class="citation">[34, 35]</a></p>
+                <h4>O Rastro das Evidências</h4>
+                <p>O caso veio à tona com reportagens sobre a tentativa de um integrante do governo de ingressar ilegalmente no Brasil com um conjunto de joias avaliado em R$ 5,6 milhões, presente do governo da Arábia Saudita.<a href="#source-34" class="citation">[34]</a> A apuração da PF, no entanto, revelou um esquema mais amplo, que incluía a venda de outros presentes oficiais nos Estados Unidos.<a href="#source-35" class="citation">[35, 36]</a></p>
+                <p>A investigação ganhou uma dimensão internacional com a cooperação da PF com o FBI e o Departamento de Justiça dos EUA, firmada sob um Tratado de Assistência Jurídica Mútua.<a href="#source-37" class="citation">[37, 38]</a> Essa colaboração foi crucial, permitindo o rastreamento do dinheiro e a obtenção de provas materiais. Foram colhidas imagens de câmeras de segurança, registros bancários e depoimentos de lojistas e intermediários em cidades como Nova York e Pensilvânia.<a href="#source-36" class="citation">[36, 38]</a> Uma das provas mais contundentes obtidas pelo FBI foi a que demonstrou a ligação entre o advogado de Bolsonaro, Frederick Wassef, e o pai de Mauro Cid na operação de recompra de um relógio Rolex nos EUA, depois que o Tribunal de Contas da União (TCU) exigiu a devolução do item.<a href="#source-6" class="citation">[6]</a> Os investigadores afirmam possuir provas de que Bolsonaro tinha conhecimento e deu seu aval para a operação ilegal de venda.<a href="#source-36" class="citation">[36]</a></p>
+                <h4>Estratégia de Defesa</h4>
+                <p>A defesa de Bolsonaro busca descaracterizar o crime de peculato, argumentando que os fatos configurariam, no máximo, uma infração de natureza administrativa.<a href="#source-39" class="citation">[39]</a> Uma manobra central foi a devolução dos itens ao TCU. A defesa acreditava que, com essa atitude, estaria "protegendo" o ex-presidente da acusação de peculato.<a href="#source-40" class="citation">[40]</a> No entanto, essa estratégia é contestada pela cronologia dos fatos. A devolução ocorreu apenas *após* a exposição do caso pela imprensa e a determinação do TCU, o que pode ser interpretado não como um ato de boa-fé, mas como uma medida de controle de danos. O princípio do "arrependimento posterior", embora possa atenuar uma eventual pena, não extingue o crime, especialmente quando há evidências de que a intenção original era a apropriação definitiva dos bens. A defesa também tem se queixado de não ter tido acesso integral aos autos do inquérito.<a href="#source-41" class="citation">[41, 42]</a></p>
+                <h4>Status Atual</h4>
+                <p>Com o indiciamento formal pela PF, o relatório conclusivo da investigação foi remetido à PGR. Cabe agora ao órgão decidir se apresenta uma denúncia formal ao STF, o que, se ocorrer, abrirá uma nova ação penal contra o ex-presidente, transformando-o em réu também por estes crimes.<a href="#source-34" class="citation">[34]</a></p>
+
+                <h3 id="stf-vacina">Seção 2.3: A Investigação sobre a Fraude nos Cartões de Vacinação</h3>
+                <p>Este caso ilustra a centralidade da colaboração de Mauro Cid e envolve a suposta adulteração de dados em sistemas públicos de saúde.</p>
+                <h4>As Acusações</h4>
+                <p>Bolsonaro foi indiciado pela PF em março do ano anterior pelos crimes de inserção de dados falsos em sistema de informações e associação criminosa.<a href="#source-35" class="citation">[35]</a> A acusação é de que ele teria participado de um esquema para fraudar os registros de vacinação contra a Covid-19.</p>
+                <h4>A Prova Central: A Delação de Mauro Cid</h4>
+                <p>O pilar desta acusação é o acordo de colaboração premiada (*delação premiada*) firmado por Mauro Cid com a PF. Em seu depoimento, cujo sigilo foi derrubado pelo STF, Cid afirmou categoricamente que Jair Bolsonaro lhe deu uma ordem direta para que fossem inseridos dados falsos de vacinação nos sistemas do Ministério da Saúde em seu nome e no de sua filha mais nova, Laura.<a href="#source-5" class="citation">[5, 43, 44]</a> Cid detalhou que, após a inserção fraudulenta, ele mesmo imprimiu os certificados e os entregou em mãos ao então presidente.<a href="#source-5" class="citation">[5, 44]</a> A operação teria sido coordenada por Cid, envolvendo outros assessores.<a href="#source-45" class="citation">[45]</a></p>
+                <h4>Estratégia de Defesa</h4>
+                <p>Bolsonaro nega veementemente as acusações. Ele reitera que nunca se vacinou e que, portanto, não teria por que fraudar um documento que nunca precisou utilizar em suas viagens.<a href="#source-3" class="citation">[3, 46]</a> A estratégia inicial da defesa consistia em negar o conhecimento da fraude sem, contudo, implicar diretamente Mauro Cid.<a href="#source-47" class="citation">[47]</a> Posteriormente, a defesa comemorou um pedido da PGR para arquivamento do caso, embora essa não seja uma decisão final e vinculante para o STF.<a href="#source-48" class="citation">[48]</a></p>
+                <h4>Status Atual</h4>
+                <p>O ex-presidente foi indiciado pela PF.<a href="#source-35" class="citation">[35]</a> O inquérito está nas mãos da PGR, que, após pedir diligências complementares, deve emitir um parecer final sobre o oferecimento ou não de denúncia ao STF.<a href="#source-5" class="citation">[5]</a></p>
+
+                <h3 id="stf-outros">Seção 2.4: Uma Constelação de Outros Inquéritos</h3>
+                <p>Além dos três casos principais, Bolsonaro é alvo de uma série de outras investigações no STF que demonstram a amplitude do cerco judicial. Entre as mais relevantes estão:</p>
+                <ul>
+                    <li><strong>Inquérito das Milícias Digitais:</strong> Apura a existência de uma organização criminosa que teria utilizado meios ilícitos para disseminar desinformação, atacar adversários e atentar contra as instituições democráticas. É considerado um inquérito-mãe de onde derivaram outras investigações, como a da tentativa de golpe.<a href="#source-3" class="citation">[3, 8]</a></li>
+                    <li><strong>Interferência na Polícia Federal:</strong> Investiga se Bolsonaro trocou o comando da PF com o objetivo de interferir em investigações que poderiam atingir seus filhos e aliados.<a href="#source-34" class="citation">[34]</a></li>
+                    <li><strong>"Abin Paralela":</strong> Apura o suposto uso da Agência Brasileira de Inteligência (Abin) para a criação de um sistema de espionagem ilegal contra adversários políticos, jornalistas e autoridades. O relatório da PF deveria apontar indícios contra Bolsonaro, embora ele não tenha sido formalmente indiciado neste inquérito específico para evitar a duplicidade de acusações, uma vez que o crime de organização criminosa já é objeto da ação do golpe de Estado.<a href="#source-34" class="citation">[34]</a></li>
+                    <li><strong>Influência em Tarifas de Trump:</strong> A mais recente frente de investigação, aberta em meados de 2025, apura se Bolsonaro e seu filho, o deputado Eduardo Bolsonaro, atuaram junto ao governo de Donald Trump para que fossem impostas sanções comerciais ao Brasil. O objetivo seria usar a pressão econômica externa para coagir o STF e favorecer Bolsonaro no julgamento da tentativa de golpe.<a href="#source-1" class="citation">[1, 8, 29, 33]</a> Foi a abertura deste inquérito que motivou a imposição da tornozeleira eletrônica.</li>
+                </ul>
+            </section>
+
+            <section id="part3">
+                <h2>Parte III: A Frente Eleitoral – Condenações por Inelegibilidade no Tribunal Superior Eleitoral (TSE)</h2>
+                <p>Se na esfera criminal os processos ainda caminham para um desfecho, na arena eleitoral as consequências já se materializaram, com decisões que removeram Jair Bolsonaro da disputa política no curto e médio prazo.</p>
+                
+                <h3 id="tse-embaixadores">Seção 3.1: A Primeira Condenação (Junho de 2023): A Reunião com Embaixadores</h3>
+                <p>A primeira grande derrota judicial de Bolsonaro após deixar a presidência veio do TSE.</p>
+                <ul>
+                    <li><strong>Fundamentos da Condenação:</strong> O Tribunal entendeu que o ex-presidente cometeu abuso de poder político e uso indevido dos meios de comunicação.<a href="#source-49" class="citation">[49, 50]</a></li>
+                    <li><strong>O Ato:</strong> Em julho de 2022, a menos de três meses das eleições, Bolsonaro convocou dezenas de embaixadores estrangeiros para uma reunião no Palácio da Alvorada. Utilizando a estrutura da Presidência da República e a transmissão da TV Brasil, canal de comunicação oficial do governo, ele proferiu um longo discurso no qual atacou a lisura do sistema eletrônico de votação brasileiro, repetiu teorias da conspiração sem apresentar provas e desacreditou a Justiça Eleitoral.<a href="#source-49" class="citation">[49, 51, 52]</a></li>
+                    <li><strong>A Decisão:</strong> Por um placar de 5 votos a 2, o plenário do TSE declarou Jair Bolsonaro inelegível por oito anos, a contar das eleições de 2022, o que o impede de disputar eleições até 2030.<a href="#source-49" class="citation">[49, 50, 53]</a> A Corte concluiu que ele se valeu de sua posição de poder para disseminar desinformação com o claro objetivo de obter vantagens eleitorais e minar a confiança no processo democrático.<a href="#source-49" class="citation">[49]</a></li>
+                </ul>
+
+                <h3 id="tse-bicentenario">Seção 3.2: A Segunda Condenação (Outubro de 2023): Os Atos do Bicentenário da Independência</h3>
+                <p>Poucos meses depois, uma nova condenação no TSE reforçou o status de inelegibilidade de Bolsonaro.</p>
+                <ul>
+                    <li><strong>Fundamentos da Condenação:</strong> Desta vez, os crimes reconhecidos foram abuso de poder político e econômico e conduta vedada a agente público em período eleitoral.<a href="#source-54" class="citation">[54]</a></li>
+                    <li><strong>O Ato:</strong> O TSE considerou que Bolsonaro e seu candidato a vice, Walter Braga Netto, sequestraram as comemorações oficiais do Bicentenário da Independência, em 7 de setembro de 2022. Os eventos cívico-militares em Brasília e no Rio de Janeiro foram transformados em ostensivos comícios de campanha, com o uso de recursos, símbolos e aparato estatal para promover suas candidaturas.<a href="#source-54" class="citation">[54]</a></li>
+                    <li><strong>A Decisão:</strong> Novamente por 5 votos a 2, o Tribunal impôs a Bolsonaro e a Braga Netto a pena de inelegibilidade por oito anos, além de multas que somaram mais de R$ 600 mil.<a href="#source-54" class="citation">[54]</a> Os ministros destacaram a "deliberada confusão" criada entre a figura do chefe de Estado e a do candidato, caracterizando um claro desvio de finalidade do patrimônio público.<a href="#source-54" class="citation">[54]</a></li>
+                </ul>
+
+                <h3 id="tse-outras">Seção 3.3: Outras Ações Eleitorais Pendentes</h3>
+                <p>Apesar de já estar inelegível por duas decisões, o ex-presidente ainda responde a outras Ações de Investigação Judicial Eleitoral (AIJEs) no TSE. Ao todo, no final de 2023, ainda havia 14 ações pendentes.<a href="#source-9" class="citation">[9]</a> Uma das mais notórias investiga o chamado "pacote de bondades", um conjunto de medidas de ampliação de benefícios sociais e créditos implementado no ano eleitoral de 2022, que a oposição alega ter configurado uma estratégia de compra de votos em massa.<a href="#source-55" class="citation">[55, 56]</a></p>
+                <p>As decisões do TSE estabelecem uma jurisprudência robusta e um claro recado para o futuro da política brasileira. Elas sinalizam uma postura de intolerância do Judiciário com a fusão entre a máquina estatal e os interesses de campanha, bem como com a instrumentalização da desinformação como ferramenta política. Ao punir o uso do cargo para atacar o próprio sistema que o legitima e o desvio de recursos e símbolos nacionais para fins partidários, o TSE reforçou os princípios da impessoalidade e da moralidade administrativa, redefinindo os limites do que é aceitável na disputa pelo poder. Enquanto os processos no STF lidam com a possibilidade de sanções criminais futuras, as ações no TSE já produziram um impacto político concreto e imediato, redesenhando o mapa político do país ao remover um de seus principais atores do tabuleiro eleitoral até 2030.</p>
+            </section>
+
+            <section id="part4">
+                <h2>Parte IV: Cronologia, Análise e Conclusão</h2>
+                
+                <h3 id="cronologia">Seção 4.1: Cronologia de um Cerco Judicial (2019-Presente)</h3>
+                <p>O labirinto jurídico em que se encontra Jair Bolsonaro não foi construído da noite para o dia. É o resultado de um processo que se desenrolou ao longo de anos, com marcos importantes que ajudam a compreender a situação atual.</p>
+                <ul>
+                    <li><strong>Março de 2019:</strong> O STF, sob a presidência do ministro Dias Toffoli, instaura de ofício o Inquérito 4781, conhecido como "Inquérito das Fake News". O ministro Alexandre de Moraes é designado relator. Esta decisão se mostraria crucial, pois estabeleceu a competência de Moraes para julgar casos subsequentes envolvendo atos antidemocráticos, formando a base para muitas das investigações atuais.<a href="#source-1" class="citation">[1, 8]</a></li>
+                    <li><strong>Julho de 2022:</strong> Bolsonaro realiza a reunião com embaixadores no Palácio da Alvorada, evento que se tornaria o pivô de sua primeira condenação à inelegibilidade.<a href="#source-49" class="citation">[49]</a> No mesmo mês, ocorre a reunião ministerial sigilosa cujo vídeo se tornaria uma prova central na acusação de tentativa de golpe.<a href="#source-18" class="citation">[18, 19]</a></li>
+                    <li><strong>Setembro de 2022:</strong> Ocorrem as comemorações do Bicentenário da Independência, que foram posteriormente julgadas pelo TSE como atos de campanha com abuso de poder.<a href="#source-54" class="citation">[54]</a></li>
+                    <li><strong>Outubro de 2022:</strong> Bolsonaro é derrotado nas eleições presidenciais.</li>
+                    <li><strong>Janeiro de 2023:</strong> A PF encontra a "minuta do golpe" na casa de Anderson Torres.</li>
+                    <li><strong>Junho de 2023:</strong> O TSE condena Bolsonaro à inelegibilidade por oito anos no caso da reunião com embaixadores.<a href="#source-50" class="citation">[50]</a></li>
+                    <li><strong>Outubro de 2023:</strong> O TSE impõe uma segunda condenação de inelegibilidade a Bolsonaro, desta vez pelo caso do Bicentenário da Independência.<a href="#source-54" class="citation">[54]</a></li>
+                    <li><strong>Março de 2024:</strong> A PF indicia Bolsonaro no inquérito sobre a fraude nos cartões de vacinação.<a href="#source-35" class="citation">[35]</a></li>
+                    <li><strong>Julho de 2024:</strong> A PF indicia Bolsonaro no inquérito sobre a venda ilegal de joias sauditas.<a href="#source-34" class="citation">[34, 35]</a></li>
+                    <li><strong>Março de 2025:</strong> A Primeira Turma do STF torna Bolsonaro réu na ação penal sobre a tentativa de golpe de Estado.<a href="#source-28" class="citation">[28]</a></li>
+                    <li><strong>Julho de 2025:</strong> O STF abre um novo inquérito contra Bolsonaro por suposta articulação com o governo Trump para coagir autoridades brasileiras, e impõe o uso de tornozeleira eletrônica como medida cautelar.<a href="#source-1" class="citation">[1, 29]</a> A PGR apresenta suas alegações finais no processo do golpe, pedindo a condenação do ex-presidente.<a href="#source-15" class="citation">[15]</a></li>
+                </ul>
+
+                <h3 id="analise">Seção 4.2: Análise de Especialista – A Confluência entre Direito e Política</h3>
+                <p>O conjunto de processos contra Jair Bolsonaro representa mais do que uma série de disputas legais; é um teste de estresse para as instituições democráticas brasileiras e um campo de batalha onde as fronteiras entre o direito e a política são constantemente tensionadas.</p>
+                <p>A análise dos casos revela uma teia interconectada de acusações, onde provas e atores transitam entre diferentes inquéritos, criando um risco jurídico cumulativo. A colaboração de Mauro Cid é o exemplo mais eloquente dessa dinâmica, servindo como uma chave-mestra que abre portas em múltiplas investigações. Essa interconexão fortalece a narrativa da acusação de que não se tratam de deslizes isolados, mas de um *modus operandi* sistêmico.</p>
+                <p>Diante do que perceberam como uma ameaça existencial à democracia, o STF e o TSE adotaram uma postura assertiva, por vezes chamada de "ativismo judicial". A figura do ministro Alexandre de Moraes tornou-se central nessa reação. As decisões de abrir inquéritos de ofício, autorizar operações de busca e apreensão e, mais recentemente, impor medidas cautelares severas como a tornozeleira eletrônica <a href="#source-31" class="citation">[31]</a>, são justificadas pela Corte como necessárias para a defesa do Estado de Direito, para conter a disseminação de desinformação e para evitar a obstrução da justiça e o risco de fuga.<a href="#source-30" class="citation">[30, 31]</a> Essa postura, contudo, é alvo de críticas contundentes por parte dos aliados de Bolsonaro, que a classificam como perseguição política e abuso de autoridade, alimentando uma narrativa de vitimização que ressoa com sua base de apoiadores.<a href="#source-52" class="citation">[52]</a></p>
+                <p>Nesse contexto, as estratégias de defesa operam em um duplo registro. Nos tribunais, advogados apresentam teses técnicas, como a do "crime impossível" <a href="#source-24" class="citation">[24]</a>, buscando brechas na dogmática penal. Fora deles, no tribunal da opinião pública, a narrativa é outra: a de um líder injustiçado por um sistema judicial politizado.</p>
+                <p>O desfecho desses processos definirá não apenas o futuro de Jair Bolsonaro, mas também os contornos da responsabilidade de altas autoridades no Brasil. Uma condenação criminal no caso da tentativa de golpe seria um marco histórico, podendo levar ao primeiro encarceramento de um ex-presidente por crimes contra o Estado. Tal resultado seria visto como uma afirmação contundente da força das instituições e do princípio de que ninguém está acima da lei. Por outro lado, uma absolvição seria uma vitória monumental para Bolsonaro e seu movimento político, potencialmente validando sua narrativa de perseguição e emboldenando suas fileiras. De qualquer forma, o legado desta saga judicial será duradouro, redefinindo os parâmetros da accountability política e testando, como nunca antes, a resiliência da jovem democracia brasileira.</p>
+            </section>
+
+            <section id="appendix">
+                <h2>Apêndice A: Tabela Resumo dos Principais Processos Judiciais</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Caso/Investigação</th>
+                            <th>Jurisdição</th>
+                            <th>Alegações Principais</th>
+                            <th>Evidências Públicas Chave</th>
+                            <th>Status (Final de 2025)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Tentativa de Golpe de Estado</strong></td>
+                            <td>STF</td>
+                            <td>Organização Criminosa, Golpe de Estado, Abolição Violenta do Estado de Direito <a href="#source-11" class="citation">[11]</a></td>
+                            <td>Vídeo da reunião ministerial de 5/Jul/2022, "Minuta do Golpe", Delação e dados de Mauro Cid, Depoimentos de generais <a href="#source-13" class="citation">[13, 18, 21]</a></td>
+                            <td><strong>Réu</strong> - Aguardando julgamento pela Primeira Turma do STF <a href="#source-15" class="citation">[15, 28]</a></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Caso das Joias Sauditas</strong></td>
+                            <td>STF</td>
+                            <td>Peculato, Lavagem de Dinheiro, Associação Criminosa <a href="#source-34" class="citation">[34, 35]</a></td>
+                            <td>Cooperação com o FBI, rastreamento de vendas nos EUA, depoimentos, recompra de relógio Rolex <a href="#source-6" class="citation">[6, 36, 38]</a></td>
+                            <td><strong>Indiciado</strong> - Aguardando análise da PGR para oferecimento de denúncia <a href="#source-34" class="citation">[34]</a></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Fraude nos Cartões de Vacina</strong></td>
+                            <td>STF</td>
+                            <td>Inserção de Dados Falsos em Sistema Público, Associação Criminosa <a href="#source-35" class="citation">[35]</a></td>
+                            <td>Delação premiada de Mauro Cid afirmando ter recebido ordem direta de Bolsonaro <a href="#source-5" class="citation">[5, 43]</a></td>
+                            <td><strong>Indiciado</strong> - Aguardando parecer final da PGR sobre oferecimento de denúncia <a href="#source-5" class="citation">[5]</a></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Reunião com Embaixadores</strong></td>
+                            <td>TSE</td>
+                            <td>Abuso de Poder Político, Uso Indevido dos Meios de Comunicação <a href="#source-49" class="citation">[49, 50]</a></td>
+                            <td>Gravação da reunião no Palácio da Alvorada, uso da estrutura e canais oficiais do governo <a href="#source-49" class="citation">[49]</a></td>
+                            <td><strong>Condenado</strong> - Inelegível por 8 anos, a contar de 2022 <a href="#source-50" class="citation">[50, 53]</a></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Bicentenário da Independência</strong></td>
+                            <td>TSE</td>
+                            <td>Abuso de Poder Político e Econômico, Conduta Vedada <a href="#source-54" class="citation">[54]</a></td>
+                            <td>Uso das comemorações oficiais de 7 de Setembro como comício de campanha, desvio de finalidade de recursos públicos <a href="#source-54" class="citation">[54]</a></td>
+                            <td><strong>Condenado</strong> - Inelegível por 8 anos, a contar de 2022 <a href="#source-54" class="citation">[54]</a></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Influência em Tarifas (Trump)</strong></td>
+                            <td>STF</td>
+                            <td>Coação no curso do processo, Obstrução de investigação, Abolição violenta do Estado de Direito <a href="#source-30" class="citation">[30]</a></td>
+                            <td>Investigações sobre articulação com o governo dos EUA para pressionar o Judiciário brasileiro <a href="#source-1" class="citation">[1, 29]</a></td>
+                            <td><strong>Investigado</strong> - Inquérito aberto, motivou a imposição de medidas cautelares <a href="#source-1" class="citation">[1, 8]</a></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+        </main>
+
+        <footer id="sources">
+            <h2>Fontes de Referência</h2>
+            <ul class="sources-list">
+                <li id="source-1">[1] <a href="https://www.cnnbrasil.com.br/blogs/luisa-martins/politica/stf-ve-provas-fartas-para-condenar-bolsonaro/" target="_blank">CNN Brasil</a></li>
+                <li id="source-2">[2] <a href="https://www.estadao.com.br/politica/jair-bolsonaro-investigacoes-stf-andamento-nprp/" target="_blank">Estadão</a></li>
+                <li id="source-3">[3] <a href="https://www.poder360.com.br/justica/bolsonaro-e-alvo-de-25-investigacoes-entenda/" target="_blank">Poder360</a></li>
+                <li id="source-4">[4] <a href="https://www.cnnbrasil.com.br/politica/jair-bolsonaro-ja-acumula-quase-600-processos-indica-levantamento-feito-pelo-pl/" target="_blank">CNN Brasil</a></li>
+                <li id="source-5">[5] <a href="https://www.poder360.com.br/poder-justica/bolsonaro-ordenou-falsificacao-dados-de-vacina-disse-cid-em-delacao/" target="_blank">Poder360</a></li>
+                <li id="source-6">[6] <a href="https://www.poder360.com.br/justica/fbi-encontra-provas-da-ligacao-de-wassef-a-pai-de-cid-no-caso-rolex/" target="_blank">Poder360</a></li>
+                <li id="source-7">[7] <a href="https://www.youtube.com/watch?v=TEDrHnV0E2U" target="_blank">BBC News Brasil (YouTube)</a></li>
+                <li id="source-8">[8] <a href="https://www.estadao.com.br/politica/jair-bolsonaro-investigacoes-stf-andamento-nprp/" target="_blank">Estadão</a></li>
+                <li id="source-9">[9] <a href="https://veja.abril.com.br/coluna/maquiavel/ja-inelegivel-em-duas-acoes-bolsonaro-continua-sofrendo-derrotas-no-tse/" target="_blank">Veja</a></li>
+                <li id="source-10">[10] <a href="https://www.estadao.com.br/politica/por-quais-crimes-bolsonaro-foi-denunciado-pela-pgr-entenda-cada-um-deles-nprp/" target="_blank">Estadão</a></li>
+                <li id="source-11">[11] <a href="https://www.estadao.com.br/politica/por-quais-crimes-bolsonaro-foi-denunciado-pela-pgr-entenda-cada-um-deles-nprp/" target="_blank">Estadão</a></li>
+                <li id="source-12">[12] <a href="https://www.youtube.com/watch?v=NYWtJje7UVg" target="_blank">CNN Brasil (YouTube)</a></li>
+                <li id="source-13">[13] <a href="https://www.brasilparalelo.com.br/noticias/relatorio-da-operacao-contragolpe-da-pf-quais-sao-as-provas-apresentadas-contra-bolsonaro-e-os-36-indiciados" target="_blank">Brasil Paralelo</a></li>
+                <li id="source-14">[14] <a href="https://www.cnnbrasil.com.br/politica/entenda-a-investigacao-que-aponta-uma-trama-golpista-envolvendo-bolsonaro/" target="_blank">CNN Brasil</a></li>
+                <li id="source-15">[15] <a href="https://apublica.org/2025/07/e-agora-pgr-pede-condenacao-de-bolsonaro-e-7-reus-do-nucleo-central-da-trama-golpista/" target="_blank">Agência Pública</a></li>
+                <li id="source-16">[16] <a href="https://www.youtube.com/watch?v=y9i3Tee3jjo" target="_blank">TV Cultura (YouTube)</a></li>
+                <li id="source-17">[17] <a href="https://www.cnnbrasil.com.br/blogs/luisa-martins/politica/stf-ve-provas-fartas-para-condenar-bolsonaro/" target="_blank">CNN Brasil</a></li>
+                <li id="source-18">[18] <a href="https://www.poder360.com.br/justica/leia-a-integra-da-reuniao-de-bolsonaro-que-embasou-operacao-da-pf/" target="_blank">Poder360</a></li>
+                <li id="source-19">[19] <a href="https://www.poder360.com.br/justica/leia-a-integra-da-reuniao-de-bolsonaro-que-embasou-operacao-da-pf/" target="_blank">Poder360</a></li>
+                <li id="source-20">[20] <a href="https://www.youtube.com/watch?v=9qgaMVNKstc" target="_blank">CNN Brasil (YouTube)</a></li>
+                <li id="source-21">[21] <a href="https://www.youtube.com/watch?v=hAZSBnsBZdA" target="_blank">Terra (YouTube)</a></li>
+                <li id="source-22">[22] <a href="https://www.youtube.com/watch?v=IxCaA5EdGfs" target="_blank">Jovem Pan News (YouTube)</a></li>
+                <li id="source-23">[23] <a href="https://www.youtube.com/watch?v=pGgxjI3jPcs" target="_blank">CNN Brasil (YouTube)</a></li>
+                <li id="source-24">[24] <a href="https://www.youtube.com/watch?v=gGFl6EMejTI" target="_blank">CNN Brasil (YouTube)</a></li>
+                <li id="source-25">[25] <a href="https://www.cnnbrasil.com.br/politica/veja-os-argumentos-de-bolsonaro-para-rebater-acusacao-de-golpe/" target="_blank">CNN Brasil</a></li>
+                <li id="source-26">[26] <a href="https://noticias.stf.jus.br/postsnoticias/stf-mantem-interrogatorios-de-reus-por-tentativa-de-golpe-de-estado/" target="_blank">STF Notícias</a></li>
+                <li id="source-27">[27] <a href="https://agenciabrasil.ebc.com.br/justica/noticia/2024-03/bolsonaro-deu-a-ordem-para-fraudar-cartao-de-vacina-diz-pf" target="_blank">Agência Brasil</a></li>
+                <li id="source-28">[28] <a href="https://www.cnnbrasil.com.br/politica/veja-tudo-o-que-aconteceu-nas-24h-apos-bolsonaro-virar-reu/" target="_blank">CNN Brasil</a></li>
+                <li id="source-29">[29] <a href="https://agenciabrasil.ebc.com.br/justica/noticia/2025-07/defesa-de-bolsonaro-tem-ate-21h13-para-enviar-explicacoes-moraes" target="_blank">Agência Brasil</a></li>
+                <li id="source-30">[30] <a href="https://www.terra.com.br/noticias/brasil/politica/o-que-se-sabe-ate-agora-sobre-operacao-da-pf-que-mira-jair-bolsonaro,590d0781df43c89019fc54c351010f9d32ywn0oo.html" target="_blank">Terra</a></li>
+                <li id="source-31">[31] <a href="https://www.poder360.com.br/brasil/defesa-de-bolsonaro-tem-ate-as-21h13-para-se-explicar-a-moraes/" target="_blank">Poder360</a></li>
+                <li id="source-32">[32] <a href="https://agenciabrasil.ebc.com.br/justica/noticia/2025-07/defesa-de-bolsonaro-tem-ate-21h13-para-enviar-explicacoes-moraes" target="_blank">Agência Brasil</a></li>
+                <li id="source-33">[33] <a href="https://www.estadao.com.br/politica/ministros-primeira-turma-stf-medidas-jair-bolsonaro-nprp/" target="_blank">Estadão</a></li>
+                <li id="source-34">[34] <a href="https://www.terra.com.br/noticias/brasil/politica/bolsonaro/joias-abin-paralela-e-mais-veja-outras-investigacoes-em-andamento-contra-bolsonaro,5515eddeff5b5e66af62e86629852d4c6p17xwp4.html" target="_blank">Terra</a></li>
+                <li id="source-35">[35] <a href="https://www.cnnbrasil.com.br/politica/bolsonaro-indiciado-saiba-quais-foram-os-crimes-do-ex-presidente-apontados-pela-pf/" target="_blank">CNN Brasil</a></li>
+                <li id="source-36">[36] <a href="https://www.terra.com.br/noticias/brasil/politica/pf-tem-provas-de-que-bolsonaro-tinha-conhecimento-da-venda-ilegal-de-joias-nos-eua,9388b999a91182b840efe2c9956854daqw0vso4j.html" target="_blank">Terra</a></li>
+                <li id="source-37">[37] <a href="https://www.poder360.com.br/poder-justica/pf-envia-ao-stf-depoimentos-sobre-caso-das-joias-de-bolsonaro/" target="_blank">Poder360</a></li>
+                <li id="source-38">[38] <a href="https://www.cnnbrasil.com.br/politica/ao-fbi-e-a-pf-cid-da-detalhes-de-venda-de-joias-nos-estados-unidos/" target="_blank">CNN Brasil</a></li>
+                <li id="source-39">[39] <a href="https://www.youtube.com/watch?v=cdqbHKuaPIo" target="_blank">UOL (YouTube)</a></li>
+                <li id="source-40">[40] <a href="https://www.cnnbrasil.com.br/politica/defesa-acredita-ter-protegido-bolsonaro-do-crime-de-peculato/" target="_blank">CNN Brasil</a></li>
+                <li id="source-41">[41] <a href="https://www.youtube.com/watch?v=Qob952VL1PQ" target="_blank">CNN Brasil (YouTube)</a></li>
+                <li id="source-42">[42] <a href="https://www.cnnbrasil.com.br/politica/peculato-lavagem-e-associacao-criminosa-entenda-os-crimes-pelos-quais-bolsonaro-foi-indiciado/" target="_blank">CNN Brasil</a></li>
+                <li id="source-43">[43] <a href="https://istoedinheiro.com.br/bolsonaro-pediu-insercao-de-dados-falsos-em-cartao-de-vacina-disse-cid-em-delacao/" target="_blank">IstoÉ Dinheiro</a></li>
+                <li id="source-44">[44] <a href="https://www.poder360.com.br/poder-justica/bolsonaro-ordenou-falsificacao-dados-de-vacina-disse-cid-em-delacao/" target="_blank">Poder360</a></li>
+                <li id="source-45">[45] <a href="https://www.brasildefato.com.br/2023/08/28/alem-das-joias-relembre-outros-casos-em-que-bolsonaro-e-alvo-de-investigacoes/" target="_blank">Brasil de Fato</a></li>
+                <li id="source-46">[46] <a href="https://www.poder360.com.br/brasil/entenda-caso-de-suposta-fraude-em-vacinacao-de-bolsonaro/" target="_blank">Poder360</a></li>
+                <li id="source-47">[47] <a href="https://www.youtube.com/watch?v=UqYiGG-_akM" target="_blank">CNN Brasil (YouTube)</a></li>
+                <li id="source-48">[48] <a href="https://www.cnnbrasil.com.br/politica/nao-havia-qualquer-prova-diz-bolsonaro-sobre-fraude-em-cartao-de-vacina/" target="_blank">CNN Brasil</a></li>
+                <li id="source-49">[49] <a href="https://www.tse.jus.br/comunicacao/noticias/2023/Junho/por-maioria-de-votos-tse-declara-bolsonaro-inelegivel-por-8-anos" target="_blank">TSE Notícias</a></li>
+                <li id="source-50">[50] <a href="https://www.tse.jus.br/comunicacao/noticias/2023/Junho/por-maioria-de-votos-tse-declara-bolsonaro-inelegivel-por-8-anos" target="_blank">TSE Notícias</a></li>
+                <li id="source-51">[51] <a href="https://direito.usp.br/noticia/adca6eb6f1d2-tribunal-superior-eleitoral-declara-ex-presidente-jair-bolsonaro-inelegivel-por-oito-anos-" target="_blank">Direito USP</a></li>
+                <li id="source-52">[52] <a href="https://www.camara.leg.br/noticias/976730-decisao-do-tse-que-tornou-ex-presidente-bolsonaro-inelegivel-repercute-entre-lideres-na-camara/" target="_blank">Agência Câmara de Notícias</a></li>
+                <li id="source-53">[53] <a href="https://www.tse.jus.br/comunicacao/noticias/2023/Junho/por-maioria-de-votos-tse-declara-bolsonaro-inelegivel-por-8-anos" target="_blank">TSE Notícias</a></li>
+                <li id="source-54">[54] <a href="https://www.tse.jus.br/comunicacao/noticias/2023/Outubro/tse-declara-inelegiveis-bolsonaro-e-braga-netto-por-abuso-de-poder-no-bicentenario-da-independencia" target="_blank">TSE Notícias</a></li>
+                <li id="source-55">[55] <a href="https://www.cnnbrasil.com.br/blogs/luisa-martins/politica/tse-se-prepara-para-julgar-nova-acao-de-inelegibilidade-contra-bolsonaro/" target="_blank">CNN Brasil</a></li>
+                <li id="source-56">[56] <a href="https://www.youtube.com/watch?v=RjxqRPv9MP0" target="_blank">CNN Brasil (YouTube)</a></li>
+            </ul>
+        </footer>
+    </div>
+</body>
+</html>
